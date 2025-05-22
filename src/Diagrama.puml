@@ -1,0 +1,43 @@
+@startuml
+class Persona{
++ String Cedula
++ String Nombre
++ String Direccion
++ String Telefono
++ void mostrarInformacionPersonal()
++ void mostrarInformacionSinTelefono()
+}
+
+class Estudiante extends Persona{
++ String Carrera
++ String Nivel
++ void mostrarInformacionPersonal(){override}
++ int calcularEdad(int anioActual, int anioNacimiento)
+}
+
+class Docente extends Persona{
++ String FacultadPertenece
++ String HorasAsignadasClases
++ void mostrarInformacionPersonal(){override}
++ void mostrarInformacionSinTelefono(){override}
+}
+
+class Docente_linea extends Docente{
++ String TipoDeContrato
++ void mostrarInformacionPersonal(){override}
++ void mostrarInformacionSinTelefono(){override}
+}
+
+class Estudiante_Presencial extends Estudiante{
++ int hora_presenciales
++ String horario
++ void mostrarInformacionPersonal(){override}
++ int calcularEdad(int anioActual, int anioNacimiento){override}
+}
+class Estudiante_Virtual extends Estudiante{
++ String plataforma
++ String tutor_virtual
++ void mostrarInformacionPersonal(){override}
++ int calcularEdad(int anioActual, int anioNacimiento){override}
+}
+@enduml
